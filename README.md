@@ -15,7 +15,7 @@
 ・Unity2020.3.6f1
 
 # 使用アセット
-・フェードインアウト：https://github.com/naichilab/Unity-FadeManager/blob/master/README.ja.md
+・フェードインアウト：https://github.com/naichilab/Unity-FadeManager/blob/master/README.ja.md  
 ・ランキング：https://blog.naichilab.com/entry/webgl-simple-ranking
 
 # スタジオしまづの公式サイト
