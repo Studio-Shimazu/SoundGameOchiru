@@ -13,6 +13,7 @@
 
 # 参考動画
 ・https://youtu.be/JxUcGRTHnL8  
+・https://github.com/keijiro/MidiAnimationTrack/blob/master/LICENSE  
 
 # 環境
 ・Unity2020.3.6f1
