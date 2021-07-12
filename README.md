@@ -18,5 +18,12 @@
 ・フェードインアウト：https://github.com/naichilab/Unity-FadeManager/blob/master/README.ja.md  
 ・ランキング：https://blog.naichilab.com/entry/webgl-simple-ranking
 
-# スタジオしまづの公式サイト
-・https://fromalgorithm.jimdofree.com
+# スタジオしまづから
+スタジオしまづは「未経験でもゲームをリリース」をコンセプトに集まるオンラインサロンです。 
+以下の方を対象としており、毎月新しいゲームがこのサロンから生まれています。  
+ゲーム開発に興味のある方はぜひ：https://fromalgorithm.jimdofree.com  
+
+・独学でゲームを作れるか心配な方  
+・コミケで出展側として参加したい方  
+・一度でいいから自分のゲームを世に出したい方  
+・ゲームを作って憧れのゲーム会社に就職したい方  
