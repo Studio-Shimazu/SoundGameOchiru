@@ -159,6 +159,13 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "jp.keijiro.klak.timeline.midi": {
+      "version": "1.0.4",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://registry.npmjs.com"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
