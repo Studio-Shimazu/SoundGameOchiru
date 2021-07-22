@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 108660107}
   - component: {fileID: 108660106}
   - component: {fileID: 108660108}
+  - component: {fileID: 108660109}
   m_Layer: 0
   m_Name: Timeline
   m_TagString: Untagged
@@ -256,6 +257,8 @@ PlayableDirector:
     value: {fileID: 108660108}
   - key: {fileID: -8456306625697852066, guid: 10213415fa40949daa2f78e9dbd13d7f, type: 2}
     value: {fileID: 379050809}
+  - key: {fileID: 7383578342719781240, guid: 10213415fa40949daa2f78e9dbd13d7f, type: 2}
+    value: {fileID: 108660105}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &108660107
@@ -368,6 +371,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &108660109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108660105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 3110ef580dd3a460da5fee00bbf8821c, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1472287284}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: OnEndEvent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &379050809
 GameObject:
   m_ObjectHideFlags: 0

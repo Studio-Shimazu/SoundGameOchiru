@@ -5,10 +5,9 @@ using UnityEngine.Playables;
 
 public class GameManager : MonoBehaviour
 {
-    // TODO:ゲーム開始の実装
-    // コルーチンを使う:時間を制御したい
+    // TODO:ゲーム終了の実装：タイムラインの終了を検知する
+    // シグナル（Signal）を使う
 
-    // タイムラインを再生したい
     [SerializeField] PlayableDirector playableDirector;
 
 
@@ -29,5 +28,10 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         Debug.Log("ゲーム開始!");
         playableDirector.Play();
+    }
+
+    public void OnEndEvent()
+    {
+        Debug.Log("ゲーム終了:結果表示");
     }
 }
