@@ -5,8 +5,12 @@ using UnityEngine.Playables;
 
 public class GameManager : MonoBehaviour
 {
-    // TODO:ゲーム終了の実装：タイムラインの終了を検知する
-    // シグナル（Signal）を使う
+    // TODO:UIの作成
+    //・カウントダウンのテキスト
+    //・ゲーム終了時のリザルトパネル
+    //・ゲーム中のスコア表示
+    //・タイトルへ
+    //・リトライボタン
 
     [SerializeField] PlayableDirector playableDirector;
 
