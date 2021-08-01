@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine.Playables;
 
 public class GameManager : MonoBehaviour
 {
-    // TODO:UIの作成
     //・カウントダウンのテキスト
+    [SerializeField] Text countDownText = default;
     //・ゲーム終了時のリザルトパネル
-    //・ゲーム中のスコア表示
-    //・タイトルへ
-    //・リトライボタン
+    [SerializeField] GameObject resultPanel = default;
+    //・リトライボタン:シーンの再読み込み
+
+    //・ゲーム中のスコア表示（スコア機能:未実装）
+    [SerializeField] Text scoreText = default;
+    //・タイトルへ（タイトル未実装）
 
     [SerializeField] PlayableDirector playableDirector;
 
+    int score;
 
     void Start()
     {
@@ -22,20 +28,34 @@ public class GameManager : MonoBehaviour
 
     IEnumerator GameMain()
     {
-        Debug.Log("3");
+        countDownText.text = "3";
         yield return new WaitForSeconds(1);
-        Debug.Log("2");
+        countDownText.text = "2";
         yield return new WaitForSeconds(1);
-        Debug.Log("1");
+        countDownText.text = "1";
         yield return new WaitForSeconds(1);
-        Debug.Log("GO!");
-        yield return new WaitForSeconds(0.3f);
-        Debug.Log("ゲーム開始!");
+        countDownText.text = "GO!";
+        yield return new WaitForSeconds(0.5f);
+        countDownText.text = "";
         playableDirector.Play();
+    }
+
+    // スコア上昇:scoreの数値を大きくする&UIに反映させる
+    // どのタイミングでスコアを上昇させる
+    public void AddScore(int point)
+    {
+        score += point;
+        scoreText.text = score.ToString();
     }
 
     public void OnEndEvent()
     {
         Debug.Log("ゲーム終了:結果表示");
+        resultPanel.SetActive(true);
+    }
+
+    public void OnRetry()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }

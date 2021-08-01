@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 8
+  gameManager: {fileID: 1472287284}
 --- !u!212 &65965542
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -862,7 +863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteFilter:
-    note: 0
+    note: 1
     octave: 0
   noteOnEvent:
     m_PersistentCalls:
@@ -1382,7 +1383,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1400198598}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1472287284}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OnRetry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1400198598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1450,6 +1463,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe873dddf6c14dc5b48fb90d19596e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countDownText: {fileID: 214191819}
+  resultPanel: {fileID: 97614299}
+  scoreText: {fileID: 314568643}
   playableDirector: {fileID: 108660106}
 --- !u!4 &1472287285
 Transform:
@@ -1557,7 +1573,7 @@ GameObject:
   - component: {fileID: 1573054470}
   - component: {fileID: 1573054469}
   m_Layer: 5
-  m_Name: TexRetryt
+  m_Name: RetryText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1625,7 +1641,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1573054470}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1472287284}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OnRetry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1573054470
 MonoBehaviour:
   m_ObjectHideFlags: 0

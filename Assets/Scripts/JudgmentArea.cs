@@ -9,6 +9,8 @@ public class JudgmentArea : MonoBehaviour
     // ・近くにノーツがあるのか:Rayをばして当たったら近い！
     // ・どれぐらいの近さなのか => 評価
     [SerializeField] float radius;
+    // GameManagerのAddScoreを実行したい！
+    [SerializeField] GameManager gameManager = default;
 
     private void Update()
     {
@@ -18,19 +20,18 @@ public class JudgmentArea : MonoBehaviour
             RaycastHit2D hit2D = Physics2D.CircleCast(transform.position, radius, Vector3.zero);
             if (hit2D)
             {
-                Debug.Log("ノーツがぶつかった");
                 float distance = Mathf.Abs(hit2D.transform.position.y - transform.position.y);
                 if (distance < 3)
                 {
-                    Debug.Log("Good!");
+                    gameManager.AddScore(100);
                 }
                 else if (distance < 5)
                 {
-                    Debug.Log("まぁまぁ!");
+                    gameManager.AddScore(10);
                 }
                 else
                 {
-                    Debug.Log("えーー!");
+                    gameManager.AddScore(0);
                 }
                 // ぶつかったものを破壊する
                 Destroy(hit2D.collider.gameObject);
