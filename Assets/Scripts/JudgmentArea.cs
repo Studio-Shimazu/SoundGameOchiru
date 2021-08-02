@@ -1,11 +1,10 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class JudgmentArea : MonoBehaviour
 {
-    //・レーンの判定を3つにする
-    //・ボタンの入力を3つ受け付ける(A,S,D)
     [SerializeField] float radius;
     [SerializeField] GameManager gameManager = default;
     [SerializeField] KeyCode keyCode;
@@ -13,8 +12,22 @@ public class JudgmentArea : MonoBehaviour
     {
         if (Input.GetKeyDown(keyCode))
         {
-            Debug.Log("aを入力");
-            RaycastHit2D hit2D = Physics2D.CircleCast(transform.position, radius, Vector3.zero);
+            // 2つのノーツがきたときに、上のノーツが消えてしまう => 下優先
+            // => 複数のノーツを取得して、一番下を消す
+            RaycastHit2D[] hits2D = Physics2D.CircleCastAll(transform.position, radius, Vector3.zero);
+            // 一番下のやつを消す
+
+            if (hits2D.Length == 0)
+            {
+                return;
+            }
+            // 一度y座標が小さいもの順で並べ替える(ソートする)
+            List<RaycastHit2D> raycastHit2Ds = hits2D.ToList();
+            raycastHit2Ds.Sort((a,b) => (int)(a.transform.position.y - b.transform.position.y));
+            // 0番目の要素を消す
+            RaycastHit2D hit2D = raycastHit2Ds[0];
+
+            // RaycastHit2D hit2D = Physics2D.CircleCast(transform.position, radius, Vector3.zero);
             if (hit2D)
             {
                 float distance = Mathf.Abs(hit2D.transform.position.y - transform.position.y);
