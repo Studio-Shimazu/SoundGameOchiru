@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class JudgmentArea : MonoBehaviour
 {
-    // ノーツが落ちてきた時に、キーボードを押したら判定したい
-    // ・キー入力
-    // ・近くにノーツがあるのか:Rayをばして当たったら近い！
-    // ・どれぐらいの近さなのか => 評価
+    //・レーンの判定を3つにする
+    //・ボタンの入力を3つ受け付ける(A,S,D)
     [SerializeField] float radius;
-    // GameManagerのAddScoreを実行したい！
     [SerializeField] GameManager gameManager = default;
-
+    [SerializeField] KeyCode keyCode;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(keyCode))
         {
             Debug.Log("aを入力");
             RaycastHit2D hit2D = Physics2D.CircleCast(transform.position, radius, Vector3.zero);

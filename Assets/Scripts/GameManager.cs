@@ -7,6 +7,19 @@ using UnityEngine.Playables;
 
 public class GameManager : MonoBehaviour
 {
+    /// <summary>
+    /// @今後やること
+    /// ＊1weekで作ったものと同様のシステムを実装していく
+    /// ・ノーツが落ちてくるのを3レーンにする
+    /// ・ノーツを叩く場所を3レーンにする
+    /// ・ノーツが重なった場合にうまく消えないバグ修正
+    /// ・ノーツのずれ修正
+
+    /// ＊リクエストがあればYouTubeメンバーシップへ
+    /// </summary>
+    ///
+
+
     //・カウントダウンのテキスト
     [SerializeField] Text countDownText = default;
     //・ゲーム終了時のリザルトパネル

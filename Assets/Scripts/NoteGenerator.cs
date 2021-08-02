@@ -8,9 +8,9 @@ public class NoteGenerator : MonoBehaviour
     // Noteを生成する
     // Prefab:Instantiate
 
-    public void SpawnNote()
+    public void SpawnNote(Vector3 pos)
     {
         // Instantiate(生成したいもの, 場所, 角度);
-        Instantiate(notePrefab, new Vector3(0, 10, 0), Quaternion.identity);
+        Instantiate(notePrefab, pos, Quaternion.identity);
     }
 }
