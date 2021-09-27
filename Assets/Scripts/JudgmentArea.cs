@@ -44,7 +44,8 @@ public class JudgmentArea : MonoBehaviour
                     gameManager.AddScore(0);
                 }
                 // ぶつかったものを破壊する
-                Destroy(hit2D.collider.gameObject);
+                // Destroy(hit2D.collider.gameObject);
+                hit2D.collider.gameObject.SetActive(false);
             }
         }
     }
