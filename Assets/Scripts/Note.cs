@@ -17,12 +17,12 @@ public class Note : MonoBehaviour
     // => 1小節:音が4回なる => 4*0.5 = 2秒 => 1小節の長さ=2秒
 
     //・判定場所までの距離はいくらか:Unity側の問題
-    // 10-(-50) => 60
+    // 70-(-50) => 120
 
 
     private void Start()
     {
-        speed = 30; // 60/2
+        speed = 60; // 120/2
     }
 
     void Update()
