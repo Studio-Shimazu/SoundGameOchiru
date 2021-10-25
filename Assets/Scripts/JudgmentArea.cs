@@ -5,9 +5,17 @@ using UnityEngine;
 
 public class JudgmentArea : MonoBehaviour
 {
+    // 目標:Goodなどの評価Effectを実装
+    // ・表示する文字のPrefabを作成：済
+    // ・特定のタイミングでPrefabを生成する：済
+    // ・生成したPrefabの文字をかえる => Textコンポーネントを編集する(それ用のクラスを作ってやる)：済
+
     [SerializeField] float radius;
     [SerializeField] GameManager gameManager = default;
     [SerializeField] KeyCode keyCode;
+
+    [SerializeField] GameObject textEffectPrefab;
+
     private void Update()
     {
         if (Input.GetKeyDown(keyCode))
@@ -34,20 +42,33 @@ public class JudgmentArea : MonoBehaviour
                 if (distance < 3)
                 {
                     gameManager.AddScore(100);
+                    // ここでEffect
+                    SpawnTextEffect("Excellent", hit2D.transform.position, Color.red);
                 }
                 else if (distance < 5)
                 {
                     gameManager.AddScore(10);
+                    // ここでEffect
+                    SpawnTextEffect("Good", hit2D.transform.position, Color.yellow);
                 }
                 else
                 {
                     gameManager.AddScore(0);
+                    // ここでEffect
+                    SpawnTextEffect("Bad", hit2D.transform.position, Color.blue);
                 }
                 // ぶつかったものを破壊する
                 // Destroy(hit2D.collider.gameObject);
                 hit2D.collider.gameObject.SetActive(false);
             }
         }
+    }
+
+    void SpawnTextEffect(string message, Vector3 position, Color color)
+    {
+        GameObject effect = Instantiate(textEffectPrefab, position+Vector3.up*1.5f, Quaternion.identity);
+        JudgmentEffect judgmentEffect = effect.GetComponent<JudgmentEffect>();
+        judgmentEffect.SetText(message, color);
     }
 
     // 可視化ツール

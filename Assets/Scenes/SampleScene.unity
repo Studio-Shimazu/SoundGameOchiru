@@ -254,6 +254,7 @@ MonoBehaviour:
   radius: 8
   gameManager: {fileID: 1472287284}
   keyCode: 100
+  textEffectPrefab: {fileID: 8574714728846223738, guid: 9d1c99da28d6e4bed8fea8ac12d00077, type: 3}
 --- !u!1 &97614299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,6 +1252,7 @@ MonoBehaviour:
   radius: 8
   gameManager: {fileID: 1472287284}
   keyCode: 115
+  textEffectPrefab: {fileID: 8574714728846223738, guid: 9d1c99da28d6e4bed8fea8ac12d00077, type: 3}
 --- !u!1 &1083051800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,3 +2002,4 @@ MonoBehaviour:
   radius: 8
   gameManager: {fileID: 1472287284}
   keyCode: 97
+  textEffectPrefab: {fileID: 8574714728846223738, guid: 9d1c99da28d6e4bed8fea8ac12d00077, type: 3}
